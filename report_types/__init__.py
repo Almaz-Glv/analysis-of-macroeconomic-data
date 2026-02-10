@@ -2,7 +2,7 @@ from report_types.average_gdp import AverageGDPReport
 
 
 class ReportFactory:
-    """Фабрика для создания отчетов"""
+    """Фабрика для создания отчетов."""
 
     # Реестр доступных отчетов
     _reports = {
@@ -12,16 +12,13 @@ class ReportFactory:
     @classmethod
     def create_report(cls, report_name: str):
         """
-        Создает экземпляр отчета по имени
+        Создает экземпляр отчета по имени.
 
-        Args:
-            report_name: Имя отчета
+        report_name: Имя отчета.
 
-        Returns:
-            Экземпляр класса отчета
+        Возвращает экземпляр класса отчета.
 
-        Raises:
-            ValueError: Если отчет не найден
+        Возвращает ошибку если отчет не найден.
         """
         report_class = cls._reports.get(report_name)
         if not report_class:
@@ -34,10 +31,10 @@ class ReportFactory:
     @classmethod
     def register_report(cls, report_name: str, report_class):
         """
-        Регистрирует новый тип отчета
+        Регистрирует новый тип отчета.
 
-        Args:
-            report_name: Имя отчета
-            report_class: Класс отчета
+        report_name: Имя отчета.
+
+        report_class: Класс отчета.
         """
         cls._reports[report_name] = report_class

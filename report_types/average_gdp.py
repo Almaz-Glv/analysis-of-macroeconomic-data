@@ -6,17 +6,15 @@ from report_types.base_report import BaseReport
 
 
 class AverageGDPReport(BaseReport):
-    """Отчет среднего ВВП по странам"""
+    """Отчет среднего ВВП по странам."""
 
     def generate(self, data: List[Dict[str, Any]]) -> List[Tuple[str, float]]:
         """
-        Вычисляет среднее ВВП по каждой стране
+        Вычисляет среднее ВВП по каждой стране.
 
-        Args:
-            data: Список словарей с данными
+        data: Список словарей с данными.
 
-        Returns:
-            Список кортежей (страна, средний ВВП)
+        Список кортежей (страна, средний ВВП).
         """
         # Используем defaultdict для группировки данных по странам
         country_gdp = defaultdict(list)
